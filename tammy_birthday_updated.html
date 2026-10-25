@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#130d20">
+<title>For Tammy A Birthday Experience</title>
+<style>
+:root{--bg:#130d20;--panel:#21152d;--pink:#ffb6d7;--rose:#e98ebd;--lav:#d5b2ff;--cream:#fff0df;--muted:#cbb7d0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;min-height:100dvh;background:radial-gradient(ellipse at 50% 0%,#482650 0%,transparent 50%),linear-gradient(145deg,#100b1b,#21132d 55%,#100b1b);color:#fff4fa;font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:10}
+.sky{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(1.5px 1.5px at 12% 19%,#fff 45%,transparent),radial-gradient(2px 2px at 83% 17%,#ffd8ed 45%,transparent),radial-gradient(1px 1px at 70% 73%,#fff 45%,transparent),radial-gradient(2px 2px at 23% 81%,#e8b9ff 45%,transparent);background-size:230px 230px;opacity:.55;animation:twinkle 4s ease-in-out infinite alternate}
+@keyframes twinkle{to{opacity:1}}
+.topbar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:22px 20px 12px;color:var(--muted);font:11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+.brand{color:var(--pink);font-family:Georgia,serif;font-size:17px;letter-spacing:1px;text-transform:none}
+.progress{height:3px;background:#ffffff12;max-width:760px;margin:0 auto 8px;border-radius:9px;overflow:hidden;position:relative;z-index:2}
+.progress-fill{height:100%;width:25%;background:linear-gradient(90deg,var(--rose),var(--lav));transition:width .45s ease}
+main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:18px 18px 36px}
+.page{display:none;min-height:70vh;min-height:70dvh;animation:enter .5s ease both}
+.page.active{display:flex;flex-direction:column;justify-content:center;align-items:center}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.kicker{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--pink);margin-bottom:20px;text-align:center}
+h1,h2{font-weight:normal;text-align:center;line-height:1.13}
+h1{font-size:clamp(42px,10vw,76px)}
+h2{font-size:clamp(32px,8vw,52px)}
+.gradient{display:block;font-style:italic;background:linear-gradient(90deg,#ffb8d8,#fff0dc,#d8b4ff);background-clip:text;-webkit-background-clip:text;color:transparent;padding-bottom:5px}
+.lead{max-width:540px;text-align:center;color:#ead9e9;font-size:17px;line-height:1.85;margin:20px auto 0}
+.emoji-hero{font-size:clamp(64px,15vw,100px);margin-bottom:20px;filter:drop-shadow(0 0 25px #f6a8d533);animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(3deg)}}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:30px;width:100%}
+.btn{border:1px solid #ffc3e055;border-radius:30px;padding:13px 21px;min-height:46px;cursor:pointer;background:#ffffff0b;color:#ffdeef;transition:transform .2s,background .2s;touch-action:manipulation}
+.btn.primary{background:linear-gradient(135deg,#f0a2c9,#c9a0e8);color:#28152d;border:0;font-weight:bold;box-shadow:0 8px 28px #db84b22b}
+.btn:hover{transform:translateY(-2px);background-color:#ffffff18}
+.btn.primary:hover{background:linear-gradient(135deg,#ffc0dd,#dfb8ff)}
+.btn:focus-visible{outline:2px solid white;outline-offset:3px}
+.small-note{font:12px Arial,sans-serif;color:#bca6c3;margin-top:22px;text-align:center;letter-spacing:.5px}
+.panel{width:100%;max-width:570px;border:1px solid #f3c5e32b;border-radius:24px;background:linear-gradient(145deg,#ffffff0d,#ffffff04);padding:clamp(22px,6vw,38px);box-shadow:0 18px 60px #00000020}
+.quote-mark{font-size:42px;color:var(--rose);text-align:center;margin-bottom:4px}
+.letter{font-size:17px;line-height:1.95;color:#f0e2ee;text-align:center}
+.letter em{color:var(--pink)}
+.divider{width:70px;height:1px;margin:24px auto;background:linear-gradient(90deg,transparent,var(--pink),transparent)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;margin-top:26px}
+.mini-card{border:1px solid #f4c6e22c;background:#ffffff08;border-radius:18px;padding:20px 10px;text-align:center;min-height:135px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px}
+.mini-card .icon{font-size:31px}
+.mini-card strong{font-size:16px;font-weight:normal;color:#ffdaed}
+.mini-card span:last-child{font:12px/1.5 Arial,sans-serif;color:#cbb8d0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:13px;width:100%;margin-top:25px}
+.polaroid{background:#f8eaf0;color:#38233a;padding:10px 10px 16px;transform:rotate(-2deg);border-radius:4px;box-shadow:0 10px 28px #0003}
+.polaroid:nth-child(2){transform:rotate(2.5deg);margin-top:16px}
+.polaroid:nth-child(3){transform:rotate(1.5deg);margin-top:-8px}
+.polaroid:nth-child(4){transform:rotate(-2deg);margin-top:8px}
+.photo{height:130px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,#f3c0d7,#d6b7ee)}
+.polaroid:nth-child(2) .photo{background:linear-gradient(135deg,#f9dca9,#e8a7c9)}
+.polaroid:nth-child(3) .photo{background:linear-gradient(135deg,#b6d7ce,#c8b2ed)}
+.polaroid:nth-child(4) .photo{background:linear-gradient(135deg,#f0b8b8,#f2d9a8)}
+.caption{text-align:center;font-style:italic;font-size:15px;padding-top:11px}
+.gallery-note{font:12px/1.7 Arial,sans-serif;color:#cbb7d0;text-align:center;margin-top:18px}
+.wish-list{width:100%;max-width:540px;display:grid;gap:12px;margin-top:25px}
+.wish{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid #f2c4e12b;border-radius:16px;background:#ffffff08;color:#f2e2ee;font-size:16px;line-height:1.5}
+.wish span{font-size:24px}
+.big-date{font-size:clamp(24px,7vw,38px);color:var(--cream);margin-top:20px;text-align:center}
+.final-card{text-align:center;width:100%;max-width:570px;padding:clamp(22px,6vw,40px);border:1px solid #f7c7e13d;border-radius:26px;background:#ffffff09}
+.final-card .cake{font-size:76px;display:block;margin:5px 0 20px}
+.footer{position:relative;z-index:1;text-align:center;color:#a990b0;font:11px Arial,sans-serif;letter-spacing:1px;padding:0 15px 25px}
+@media(max-width:480px){.topbar{padding:18px 17px 12px}.page{min-height:72vh;min-height:72dvh}.lead{font-size:15.5px}.cards{gap:7px}.mini-card{padding:15px 6px;min-height:126px}.mini-card strong{font-size:14px}.mini-card span:last-child{font-size:11px}.photo{height:105px;font-size:40px}.caption{font-size:13px}.gallery{gap:10px}.btn{padding:12px 17px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<header class="topbar">
+  <div class="brand">🎀 for Tammy</div>
+  <div id="pageCount">01 / 04</div>
+</header>
+<div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+<main>
+  <section class="page active" data-page="0">
+    <div class="emoji-hero" aria-hidden="true">🎂</div>
+    <p class="kicker">A little something made just for you</p>
+    <h1>Happy Birthday<span class="gradient">Tammy</span></h1>
+    <p class="lead">Today, the world gets a little brighter because it's your day. Ready for a tiny birthday adventure?</p>
+    <div class="big-date">26 October · Sweet 17</div>
+    <div class="actions"><button class="btn primary" data-next>Open your surprise ✨</button></div>
+    <p class="small-note">BEST EXPERIENCED WITH THE SOUND OF YOUR OWN HAPPINESS ♡</p>
+  </section>
+
+  <section class="page" data-page="1">
+    <p class="kicker">Page one · A note for you</p>
+    <div class="panel">
+      <div class="quote-mark">“</div>
+      <h2>Dear <span class="gradient">Tammy,</span></h2>
+      <div class="divider"></div>
+      <p class="letter">
+        I hope this new chapter brings you a hundred little reasons to smile.
+        May you find <em>kind people, unexpected adventures,</em> dreams worth chasing,
+        and moments that turn into your favourite memories.
+        <br><br>
+        Never forget that you don't have to be perfect to be amazing.
+        Keep being unapologetically you, keep growing at your own pace,
+        and always leave room for a little magic.
+        <br><br>
+        <em>You deserve a year that feels as special as today.</em>
+      </p>
+    </div>
+    <div class="actions"><button class="btn" data-prev>← Back</button><button class="btn primary" data-next>Next surprise →</button></div>
+  </section>
+
+  <section class="page" data-page="2">
+    <p class="kicker">Page two · Little reminders</p>
+    <h2>A year full of <span class="gradient">good things</span></h2>
+    <p class="lead">A few things I hope this year brings your way.</p>
+    <div class="cards">
+      <div class="mini-card"><span class="icon">🌷</span><strong>Soft moments</strong><span>Peace, comfort, and kindness</span></div>
+      <div class="mini-card"><span class="icon">🌟</span><strong>Big dreams</strong><span>New chances to shine</span></div>
+      <div class="mini-card"><span class="icon">🫶</span><strong>Real people</strong><span>Love that feels like home</span></div>
+    </div>
+    <div class="divider"></div>
+    <p class="lead">May you laugh a little louder, worry a little less, and collect stories you'll tell for years.</p>
+    <div class="actions">
+  <button class="btn" data-prev>← Back</button>
+  <button class="btn primary" data-next>Next surprise →</button>
+    </div>
+  </section>
+
+  <section class="page" data-page="3">
+    <p class="kicker">The final page · Make a wish</p>
+    <div class="final-card">
+      <span class="cake" aria-hidden="true">🎂</span>
+      <h2>Here's to <span class="gradient">your 17th</span></h2>
+      <p class="lead">May this year surprise you in the sweetest ways, bring you closer to your dreams, and remind you how much good there is waiting for you.</p>
+      <div class="divider"></div>
+      <div class="wish-list">
+        <div class="wish"><span>💗</span><div>More happiness than you can count.</div></div>
+        <div class="wish"><span>🍀</span><div>More chances that turn into beautiful things.</div></div>
+        <div class="wish"><span>✨</span><div>More moments where you feel proud to be you.</div></div>
+      </div>
+      <div class="big-date">Happy Birthday, Tammy!</div>
+      <p class="small-note">MAKE A WISH AND LET THE MAGIC BEGIN</p>
+      <div class="actions"><button class="btn" data-prev>← Back</button><button class="btn primary" id="celebrate">🎉 Celebrate again!</button><button class="btn" id="restart">↻ Start over</button></div>
+    </div>
+  </section>
+</main>
+<footer class="footer">MADE WITH ♡ · JUST FOR TAMMY · 26 OCTOBER</footer>
+
+<script>
+const pages = [...document.querySelectorAll(".page")];
+const pageCount = document.getElementById("pageCount");
+const progressFill = document.getElementById("progressFill");
+let current = 0;
+function showPage(index) {
+  current = Math.max(0, Math.min(pages.length - 1, index));
+  pages.forEach((page, i) => {
+    page.classList.toggle("active", i === current);
+    page.setAttribute("aria-hidden", i !== current ? "true" : "false");
+  });
+  pageCount.textContent = String(current + 1).padStart(2, "0") + " / " + String(pages.length).padStart(2, "0");
+  progressFill.style.width = ((current + 1) / pages.length * 100) + "%";
+  window.scrollTo({top: 0, behavior: "smooth"});
+  if (current === pages.length - 1) celebrate();
+}
+document.querySelectorAll("[data-next]").forEach(b => b.addEventListener("click", () => showPage(current + 1)));
+document.querySelectorAll("[data-prev]").forEach(b => b.addEventListener("click", () => showPage(current - 1)));
+document.getElementById("restart").addEventListener("click", () => showPage(0));
+
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+let pieces = [], animationId = null;
+const colors = ["#ffb7d5","#f8d9a0","#d9a7ff","#ffffff","#ff86b7","#a8e6cf"];
+function resizeCanvas() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr;
+  canvas.style.width = innerWidth + "px"; canvas.style.height = innerHeight + "px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+window.addEventListener("resize", resizeCanvas); resizeCanvas();
+function burst(x,y,amount=100) {
+  for(let i=0;i<amount;i++){
+    const a=Math.random()*Math.PI*2, speed=2+Math.random()*7;
+    pieces.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed-2,g:.1+Math.random()*.09,size:3+Math.random()*6,rot:Math.random()*360,spin:(Math.random()-.5)*12,color:colors[Math.floor(Math.random()*colors.length)],life:100+Math.random()*60,rect:Math.random()>.5});
+  }
+  if(!animationId) animate();
+}
+function animate(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  pieces=pieces.filter(p=>p.life>0);
+  for(const p of pieces){
+    p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.995;p.rot+=p.spin;p.life--;
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.globalAlpha=Math.min(1,p.life/25);ctx.fillStyle=p.color;
+    if(p.rect)ctx.fillRect(-p.size/2,-p.size/3,p.size,p.size*.65);
+    else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+    ctx.restore();
+  }
+  if(pieces.length)animationId=requestAnimationFrame(animate);
+  else{ctx.clearRect(0,0,innerWidth,innerHeight);animationId=null;}
+}
+function celebrate(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  burst(innerWidth*.2,innerHeight*.32,90);
+  burst(innerWidth*.8,innerHeight*.32,90);
+  burst(innerWidth*.5,innerHeight*.22,110);
+}
+document.getElementById("celebrate").addEventListener("click",celebrate);
+window.addEventListener("load",()=>setTimeout(celebrate,600));
+</script>
+</body>
+</html>
